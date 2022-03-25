@@ -11,6 +11,9 @@ If you are looking for a solution for in-app chat, most likely you just need to 
 To make it easier, the Major and Minor versions will be the same as the rocket.chat application
 
 # How to run/test
-
+```bash
+yarn 
+....
 npx ng run sdk:build
 npx ng run example:serve
+```
