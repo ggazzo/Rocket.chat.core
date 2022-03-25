@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@rocket.chat.core/client": ["packages/client/src/index.ts"],
+      "@rocket.chat.core/core-typings": ["packages/core-typings/src/index.ts"],
+      "@rocket.chat.core/rest-guards": ["packages/rest-guards/src/index.ts"],
+      "@rocket.chat.core/rest-typings": ["packages/rest-typings/src/index.ts"],
+      "@rocket.chat.core/sdk": ["packages/sdk/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

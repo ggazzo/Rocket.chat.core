@@ -1,0 +1,32 @@
+{
+  "root": "packages/rest-typings",
+  "sourceRoot": "packages/rest-typings/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/rest-typings",
+        "main": "packages/rest-typings/src/index.ts",
+        "tsConfig": "packages/rest-typings/tsconfig.lib.json",
+        "assets": ["packages/rest-typings/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/rest-typings/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/rest-typings"],
+      "options": {
+        "jestConfig": "packages/rest-typings/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

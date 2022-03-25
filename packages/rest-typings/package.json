@@ -1,0 +1,8 @@
+{
+  "name": "@rocket.chat.core/rest-typings",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "files": [
+    "/src"
+  ]
+}

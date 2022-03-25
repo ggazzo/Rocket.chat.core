@@ -1,0 +1,32 @@
+{
+  "root": "packages/rest-guards",
+  "sourceRoot": "packages/rest-guards/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/rest-guards",
+        "main": "packages/rest-guards/src/index.ts",
+        "tsConfig": "packages/rest-guards/tsconfig.lib.json",
+        "assets": ["packages/rest-guards/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/rest-guards/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/rest-guards"],
+      "options": {
+        "jestConfig": "packages/rest-guards/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
