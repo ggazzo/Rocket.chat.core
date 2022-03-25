@@ -3,7 +3,7 @@
   "projects": {
     "client": "packages/client",
     "core-typings": "packages/core-typings",
-    "my-new-app": "packages/my-new-app",
+    "example": "packages/example",
     "rest-guards": "packages/rest-guards",
     "rest-typings": "packages/rest-typings",
     "sdk": "packages/sdk"

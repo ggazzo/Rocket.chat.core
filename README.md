@@ -9,3 +9,8 @@ For now, we have the model definitions, the rest version 1 api endpoints, a clie
 If you are looking for a solution for in-app chat, most likely you just need to look at [SDK](./packages/sdk). The other packages tend to be more 'inflexible' as they are more critical and follow application changes and interests.
 
 To make it easier, the Major and Minor versions will be the same as the rocket.chat application
+
+# How to run/test
+
+npx ng run sdk:build
+npx ng run example:serve

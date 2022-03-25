@@ -1,16 +1,16 @@
 {
-  "root": "packages/my-new-app",
-  "sourceRoot": "packages/my-new-app/src",
+  "root": "packages/example",
+  "sourceRoot": "packages/example/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/node:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/my-new-app",
-        "main": "packages/my-new-app/src/main.ts",
-        "tsConfig": "packages/my-new-app/tsconfig.app.json",
-        "assets": ["packages/my-new-app/src/assets"]
+        "outputPath": "dist/packages/example",
+        "main": "packages/example/src/main.ts",
+        "tsConfig": "packages/example/tsconfig.app.json",
+        "assets": ["packages/example/src/assets"]
       },
       "configurations": {
         "production": {
@@ -19,8 +19,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "packages/my-new-app/src/environments/environment.ts",
-              "with": "packages/my-new-app/src/environments/environment.prod.ts"
+              "replace": "packages/example/src/environments/environment.ts",
+              "with": "packages/example/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -29,7 +29,7 @@
     "serve": {
       "executor": "@nrwl/node:node",
       "options": {
-        "buildTarget": "my-new-app:build",
+        "buildTarget": "example:build",
         "runtimeArgs": ["--experimental-fetch"]
       }
     },
@@ -37,14 +37,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/my-new-app/**/*.ts"]
+        "lintFilePatterns": ["packages/example/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/my-new-app"],
+      "outputs": ["coverage/packages/example"],
       "options": {
-        "jestConfig": "packages/my-new-app/jest.config.js",
+        "jestConfig": "packages/example/jest.config.js",
         "passWithNoTests": true
       }
     }
