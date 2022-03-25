@@ -1,10 +1,10 @@
 import type { IStats } from '@rocket.chat.core/core-typings';
 
 export type StatisticsEndpoints = {
-  statistics: {
+  '/api/v1/statistics': {
     GET: (params: { refresh?: boolean }) => IStats;
   };
-  'statistics.telemetry': {
+  '/api/v1/statistics.telemetry': {
     POST: (params: TelemetryPayload) => unknown;
   };
 };

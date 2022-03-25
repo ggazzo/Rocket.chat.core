@@ -4,15 +4,15 @@ import {
 } from '@rocket.chat.core/core-typings';
 
 export type CloudEndpoints = {
-  'cloud.manualRegister': {
+  '/api/v1/cloud.manualRegister': {
     POST: (params: { cloudBlob: string }) => void;
   };
-  'cloud.createRegistrationIntent': {
+  '/api/v1/cloud.createRegistrationIntent': {
     POST: (params: { resend: boolean; email: string }) => {
       intentData: CloudRegistrationIntentData;
     };
   };
-  'cloud.confirmationPoll': {
+  '/api/v1/cloud.confirmationPoll': {
     GET: (params: { deviceCode: string; resend?: boolean }) => {
       pollData: CloudConfirmationPollData;
     };

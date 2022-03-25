@@ -35,12 +35,12 @@ type RoleSyncProps = {
 };
 
 export type RolesEndpoints = {
-  'roles.list': {
+  '/api/v1/roles.list': {
     GET: () => {
       roles: IRole[];
     };
   };
-  'roles.sync': {
+  '/api/v1/roles.sync': {
     GET: (params: RoleSyncProps) => {
       roles: {
         update: IRole[];
@@ -48,19 +48,19 @@ export type RolesEndpoints = {
       };
     };
   };
-  'roles.create': {
+  '/api/v1/roles.create': {
     POST: (params: RoleCreateProps) => {
       role: IRole;
     };
   };
 
-  'roles.addUserToRole': {
+  '/api/v1/roles.addUserToRole': {
     POST: (params: RoleAddUserToRoleProps) => {
       role: IRole;
     };
   };
 
-  'roles.getUsersInRole': {
+  '/api/v1/roles.getUsersInRole': {
     GET: (params: {
       roomId: string;
       role: string;
@@ -72,17 +72,17 @@ export type RolesEndpoints = {
     };
   };
 
-  'roles.update': {
+  '/api/v1/roles.update': {
     POST: (role: RoleUpdateProps) => {
       role: IRole;
     };
   };
 
-  'roles.delete': {
+  '/api/v1/roles.delete': {
     POST: (prop: RoleDeleteProps) => void;
   };
 
-  'roles.removeUserFromRole': {
+  '/api/v1/roles.removeUserFromRole': {
     POST: (props: RoleRemoveUserFromRoleProps) => {
       role: IRole;
     };

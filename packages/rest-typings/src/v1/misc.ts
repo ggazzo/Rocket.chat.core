@@ -1,5 +1,5 @@
 export type MiscEndpoints = {
-  'stdout.queue': {
+  '/api/v1/stdout.queue': {
     GET: () => {
       queue: {
         id: string;

@@ -1,10 +1,10 @@
 export type DnsEndpoints = {
-  'dns.resolve.srv': {
+  '/api/v1/dns.resolve.srv': {
     GET: (params: { url: string }) => {
       resolved: Record<string, string | number>;
     };
   };
-  'dns.resolve.txt': {
+  '/api/v1/dns.resolve.txt': {
     POST: (params: { url: string }) => {
       resolved: string;
       // resolved: Record<string, string | number>;

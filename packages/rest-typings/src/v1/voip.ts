@@ -14,24 +14,25 @@ import { PaginatedRequest } from '../helpers/PaginatedRequest';
 import { PaginatedResult } from '../helpers/PaginatedResult';
 
 export type VoipEndpoints = {
-  'connector.extension.getRegistrationInfoByUserId': {
+  '/api/v1/connector.extension.getRegistrationInfoByUserId': {
     GET: (params: { id: string }) => IRegistrationInfo | { result: string };
   };
-  'voip/queues.getSummary': {
+  '/api/v1/voip/queues.getSummary': {
     GET: () => { summary: IQueueSummary[] };
   };
-  'voip/queues.getQueuedCallsForThisExtension': {
+  '/api/v1/voip/queues.getQueuedCallsForThisExtension': {
     GET: (params: { extension: string }) => IQueueMembershipDetails;
   };
   'voip/queues.getMembershipSubscription': {
     GET: (params: { extension: string }) => IQueueMembershipSubscription;
   };
-  'omnichannel/extensions': {
+  '/api/v1/omnichannel/extensions': {
     GET: (
       params: PaginatedRequest
     ) => PaginatedResult & { extensions: IVoipExtensionWithAgentInfo[] };
   };
-  'omnichannel/extension': {
+  // TODO: move to /livechat/omnichannel folder
+  '/api/v1/omnichannel/extension': {
     GET: (
       params:
         | { userId: string; type: 'free' | 'allocated' | 'available' }
@@ -40,7 +41,7 @@ export type VoipEndpoints = {
       extensions: string[];
     };
   };
-  'omnichannel/agent/extension': {
+  '/api/v1/omnichannel/agent/extension': {
     GET: (params: { username: string }) => {
       extension: Pick<IUser, '_id' | 'username' | 'extension'>;
     };
@@ -51,19 +52,19 @@ export type VoipEndpoints = {
     ) => void;
     DELETE: (params: { username: string }) => void;
   };
-  'omnichannel/agents/available': {
+  '/api/v1/omnichannel/agents/available': {
     GET: (
       params: PaginatedRequest<{ text?: string; includeExtension?: string }>
     ) => PaginatedResult<{ agents: ILivechatAgent[] }>;
   };
-  'voip/events': {
+  '/api/v1/voip/events': {
     POST: (params: {
       event: VoipClientEvents;
       rid: string;
       comment?: string;
     }) => void;
   };
-  'voip/room': {
+  '/api/v1/voip/room': {
     GET: (
       params:
         | { token: string; agentId: ILivechatAgent['_id'] }
@@ -73,7 +74,7 @@ export type VoipEndpoints = {
       newRoom: boolean;
     };
   };
-  'voip/managementServer/checkConnection': {
+  '/api/v1/voip/managementServer/checkConnection': {
     GET: (params: {
       host: string;
       port: string;
@@ -81,7 +82,7 @@ export type VoipEndpoints = {
       password: string;
     }) => IManagementServerConnectionStatus;
   };
-  'voip/callServer/checkConnection': {
+  '/api/v1/voip/callServer/checkConnection': {
     GET: (params: {
       websocketUrl: string;
       host: string;
@@ -89,7 +90,7 @@ export type VoipEndpoints = {
       path: string;
     }) => IManagementServerConnectionStatus;
   };
-  'voip/rooms': {
+  '/api/v1/voip/rooms': {
     GET: (params: {
       agents?: string[];
       open?: boolean;
@@ -100,7 +101,7 @@ export type VoipEndpoints = {
       visitorId?: string;
     }) => PaginatedResult<{ rooms: IVoipRoom[] }>;
   };
-  'voip/room.close': {
+  '/api/v1/voip/room.close': {
     POST: (params: {
       rid: string;
       token: string;

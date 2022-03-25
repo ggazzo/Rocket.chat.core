@@ -3,7 +3,7 @@ import type { IRoom } from '@rocket.chat.core/core-typings';
 import type { IUser } from '@rocket.chat.core/core-typings';
 
 export type ImEndpoints = {
-  'im.create': {
+  '/api/v1/im.create': {
     POST: (
       params: (
         | {
@@ -19,7 +19,7 @@ export type ImEndpoints = {
       room: IRoom;
     };
   };
-  'im.files': {
+  '/api/v1/im.files': {
     GET: (params: {
       roomId: IRoom['_id'];
       count: number;
@@ -30,7 +30,7 @@ export type ImEndpoints = {
       total: number;
     };
   };
-  'im.members': {
+  '/api/v1/im.members': {
     GET: (params: {
       roomId: IRoom['_id'];
       offset?: number;

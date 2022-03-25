@@ -1,5 +1,5 @@
 export type CustomUserStatusEndpoints = {
-  'custom-user-status.list': {
+  '/api/v1/custom-user-status.list': {
     GET: (params: { query: string }) => {
       statuses: unknown[];
     };

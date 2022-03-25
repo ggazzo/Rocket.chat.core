@@ -5,13 +5,13 @@ export type PermissionsUpdateProps = {
 };
 
 export type PermissionsEndpoints = {
-  'permissions.listAll': {
+  '/api/v1/permissions.listAll': {
     GET: (params: { updatedSince?: string }) => {
       update: IPermission[];
       remove: IPermission[];
     };
   };
-  'permissions.update': {
+  '/api/v1/permissions.update': {
     POST: (params: PermissionsUpdateProps) => {
       permissions: IPermission[];
     };

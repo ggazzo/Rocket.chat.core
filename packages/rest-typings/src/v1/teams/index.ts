@@ -35,13 +35,13 @@ export type ITeamAutocompleteResult = Pick<
 >;
 
 export type TeamsEndpoints = {
-  'teams.list': {
+  '/api/v1/teams.list': {
     GET: () => PaginatedResult & { teams: ITeam[] };
   };
-  'teams.listAll': {
+  '/api/v1/teams.listAll': {
     GET: () => { teams: ITeam[] } & PaginatedResult;
   };
-  'teams.create': {
+  '/api/v1/teams.create': {
     POST: (params: {
       name: ITeam['name'];
       type: ITeam['type'];
@@ -79,11 +79,11 @@ export type TeamsEndpoints = {
     };
   };
 
-  'teams.convertToChannel': {
+  '/api/v1/teams.convertToChannel': {
     POST: (params: TeamsConvertToChannelProps) => void;
   };
 
-  'teams.addRooms': {
+  '/api/v1/teams.addRooms': {
     POST: (
       params:
         | { rooms: IRoom['_id'][]; teamId: string }
@@ -91,11 +91,11 @@ export type TeamsEndpoints = {
     ) => { rooms: IRoom[] };
   };
 
-  'teams.removeRoom': {
+  '/api/v1/teams.removeRoom': {
     POST: (params: TeamsRemoveRoomProps) => { room: IRoom };
   };
 
-  'teams.members': {
+  '/api/v1/teams.members': {
     GET: (
       params: ({ teamId: string } | { teamName: string }) & {
         status?: string[];
@@ -105,42 +105,42 @@ export type TeamsEndpoints = {
     ) => PaginatedResult & { members: ITeamMemberInfo[] };
   };
 
-  'teams.addMembers': {
+  '/api/v1/teams.addMembers': {
     POST: (params: TeamsAddMembersProps) => void;
   };
 
-  'teams.updateMember': {
+  '/api/v1/teams.updateMember': {
     POST: (params: TeamsUpdateMemberProps) => void;
   };
 
-  'teams.removeMember': {
+  '/api/v1/teams.removeMember': {
     POST: (params: TeamsRemoveMemberProps) => void;
   };
 
-  'teams.leave': {
+  '/api/v1/teams.leave': {
     POST: (params: TeamsLeaveProps) => void;
   };
 
-  'teams.info': {
+  '/api/v1/teams.info': {
     // eslint-disable-next-line @typescript-eslint/ban-types
     GET: (params: ({ teamId: string } | { teamName: string }) & {}) => {
       teamInfo: Partial<ITeam>;
     };
   };
 
-  'teams.autocomplete': {
+  '/api/v1/teams.autocomplete': {
     GET: (params: { name: string }) => { teams: ITeamAutocompleteResult[] };
   };
 
-  'teams.update': {
+  '/api/v1/teams.update': {
     POST: (params: TeamsUpdateProps) => void;
   };
 
-  'teams.delete': {
+  '/api/v1/teams.delete': {
     POST: (params: TeamsDeleteProps) => void;
   };
 
-  'teams.listRoomsOfUser': {
+  '/api/v1/teams.listRoomsOfUser': {
     GET: (
       params:
         | {
@@ -156,7 +156,7 @@ export type TeamsEndpoints = {
     ) => PaginatedResult & { rooms: IRoom[] };
   };
 
-  'teams.listRooms': {
+  '/api/v1/teams.listRooms': {
     GET: (
       params: PaginatedRequest &
         ({ teamId: string } | { teamName: string }) & {
@@ -166,7 +166,7 @@ export type TeamsEndpoints = {
     ) => PaginatedResult & { rooms: IRoom[] };
   };
 
-  'teams.updateRoom': {
+  '/api/v1/teams.updateRoom': {
     POST: (params: { roomId: IRoom['_id']; isDefault: boolean }) => {
       room: IRoom;
     };

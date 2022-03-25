@@ -5,10 +5,10 @@ export type InvitesEndpoints = {
   listInvites: {
     GET: () => Array<IInvite>;
   };
-  'removeInvite/:_id': {
+  '/api/v1/removeInvite/:_id': {
     DELETE: () => void;
   };
-  '/v1/useInviteToken': {
+  '/api/v1/useInviteToken': {
     POST: (params: { token: string }) => {
       room: {
         rid: IRoom['_id'];
@@ -19,7 +19,7 @@ export type InvitesEndpoints = {
       };
     };
   };
-  '/v1/validateInviteToken': {
+  '/api/v1/validateInviteToken': {
     POST: (params: { token: string }) => { valid: boolean };
   };
 };

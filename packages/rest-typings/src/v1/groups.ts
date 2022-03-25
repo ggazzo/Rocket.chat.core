@@ -3,7 +3,7 @@ import type { IRoom } from '@rocket.chat.core/core-typings';
 import type { IUser } from '@rocket.chat.core/core-typings';
 
 export type GroupsEndpoints = {
-  'groups.files': {
+  '/api/v1/groups.files': {
     GET: (params: {
       roomId: IRoom['_id'];
       count: number;
@@ -14,7 +14,7 @@ export type GroupsEndpoints = {
       total: number;
     };
   };
-  'groups.members': {
+  '/api/v1/groups.members': {
     GET: (params: {
       roomId: IRoom['_id'];
       offset?: number;

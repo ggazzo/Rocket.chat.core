@@ -8,5 +8,6 @@ import { SkdFactory } from '@rocket.chat.core/sdk';
       password: '####',
     })
   );
-  const a = await sdk.get('banners', { platform: 'web' });
+  const { banners } = await sdk.get('/api/v1/banners', { platform: 'web' });
+  console.log('Banners ->', banners);
 })().catch((err) => console.error(err));

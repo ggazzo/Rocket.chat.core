@@ -3,12 +3,12 @@ import type { IRoom } from '@rocket.chat.core/core-typings';
 import type { IUser } from '@rocket.chat.core/core-typings';
 
 export type RoomsEndpoints = {
-  'rooms.autocomplete.channelAndPrivate': {
+  '/api/v1/rooms.autocomplete.channelAndPrivate': {
     GET: (params: { selector: string }) => {
       items: IRoom[];
     };
   };
-  'rooms.autocomplete.channelAndPrivate.withPagination': {
+  '/api/v1/rooms.autocomplete.channelAndPrivate.withPagination': {
     GET: (params: {
       selector: string;
       offset?: number;
@@ -21,17 +21,17 @@ export type RoomsEndpoints = {
       total: number;
     };
   };
-  'rooms.autocomplete.availableForTeams': {
+  '/api/v1/rooms.autocomplete.availableForTeams': {
     GET: (params: { name: string }) => {
       items: IRoom[];
     };
   };
-  'rooms.info': {
+  '/api/v1/rooms.info': {
     GET: (params: { roomId: string } | { roomName: string }) => {
       room: IRoom;
     };
   };
-  'rooms.createDiscussion': {
+  '/api/v1/rooms.createDiscussion': {
     POST: (params: {
       prid: IRoom['_id'];
       pmid?: IMessage['_id'];

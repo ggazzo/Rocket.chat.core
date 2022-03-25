@@ -2,18 +2,18 @@ import type { IMessage } from '@rocket.chat.core/core-typings';
 import type { IRoom } from '@rocket.chat.core/core-typings';
 
 export type ChatEndpoints = {
-  'chat.getMessage': {
+  '/api/v1/chat.getMessage': {
     GET: (params: { msgId: IMessage['_id'] }) => {
       message: IMessage;
     };
   };
-  'chat.followMessage': {
+  '/api/v1/chat.followMessage': {
     POST: (params: { mid: IMessage['_id'] }) => void;
   };
-  'chat.unfollowMessage': {
+  '/api/v1/chat.unfollowMessage': {
     POST: (params: { mid: IMessage['_id'] }) => void;
   };
-  'chat.getDiscussions': {
+  '/api/v1/chat.getDiscussions': {
     GET: (params: {
       roomId: IRoom['_id'];
       text?: string;
@@ -24,7 +24,7 @@ export type ChatEndpoints = {
       total: number;
     };
   };
-  'chat.getThreadsList': {
+  '/api/v1/chat.getThreadsList': {
     GET: (params: {
       rid: IRoom['_id'];
       type: 'unread' | 'following' | 'all';
